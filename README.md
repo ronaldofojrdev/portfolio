@@ -4,6 +4,8 @@ Meu portfólio, feito para quem contrata: o que eu entrego, os projetos em que t
 
 No ar em https://ronaldo-ferreira-dev.vercel.app
 
+![Prévia do portfólio](docs/preview.jpg)
+
 ## O que tem aqui
 
 É um site estático de um arquivo só. Sem build e sem framework. As animações usam [Anime.js](https://animejs.com) carregado por CDN, e o layout respeita `prefers-reduced-motion` e o modo escuro do sistema.
