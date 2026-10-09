@@ -17,7 +17,7 @@
 <meta name="theme-color" content="#fbfaf7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Ronaldo Ferreira de Oliveira Junior","jobTitle":"Analista de Implantação e Produto (Product Owner)",
 "email":"mailto:ronaldofojr1@gmail.com","address":{"@type":"PostalAddress","addressLocality":"São Gonçalo","addressRegion":"RJ","addressCountry":"BR"},
@@ -26,371 +26,266 @@
 </script>
 <style>
 :root{
-  --bg:#fbfaf7; --bg2:#f3f1ec; --ink:#1b1d1f; --mute:#5f666d; --line:#e4e1da;
-  --accent:#0f6b63; --accent-hover:#0b544e; --accent-ink:#ffffff; --accent-soft:#e1efec; --card:#ffffff;
-  --ok:#2f9e63; --radius:12px; --max:1060px;
-  --font:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --bg:#fbfaf7; --ink:#1f2023; --mute:#6a6d72; --line:#dcd9d1; --link:#0f5f58; --link-hover:#0a3f3b;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 @media (prefers-color-scheme:dark){
-  :root{--bg:#121413; --bg2:#171a19; --ink:#eceeed; --mute:#a1a9a6; --line:#272c2a; --accent:#5fc4b8; --accent-hover:#7ad3c8; --accent-ink:#08201c; --accent-soft:#16302d; --card:#161918; --ok:#4cc38a}
+  :root{--bg:#161715; --ink:#e9e8e3; --mute:#9a9b96; --line:#33342f; --link:#7fcdc2; --link-hover:#a8e2d9}
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--font);-webkit-font-smoothing:antialiased}
-a{color:var(--accent);text-decoration:none}
-a:hover{color:var(--accent-hover)}
-a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-h1,h2,h3{line-height:1.2;margin:0;letter-spacing:-.012em;font-weight:600}
-h1{font-size:clamp(2.1rem,5vw,3rem)}
-h2{font-size:1.55rem}
-h3{font-size:1.05rem}
-p{margin:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.7 var(--serif);-webkit-font-smoothing:antialiased}
+.page{max-width:720px;margin:0 auto;padding:56px 24px 80px}
+a{color:var(--link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--link-hover);text-decoration-thickness:2px}
+a:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:3px}
+p{margin:0 0 1em}
+h1,h2,h3{font-weight:600;line-height:1.25;margin:0}
+h1{font-size:2.4rem;letter-spacing:-.015em}
+h2{font-size:1.25rem;margin:56px 0 16px;padding-top:20px;border-top:1px solid var(--line)}
+h3{font-size:1.02rem}
+.sans{font-family:var(--sans)}
 .muted{color:var(--mute)}
-.i{width:1.15em;height:1.15em;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.2em}
 
-/* topo */
-header.bar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--ink)}
-.brand .mono{width:30px;height:30px;border-radius:8px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:.8rem;font-weight:600;letter-spacing:.02em}
-nav{display:flex;align-items:center;gap:22px;font-size:.93rem}
-nav a.l{color:var(--mute)}
-nav a.l:hover{color:var(--ink)}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font:.92rem var(--sans);margin-bottom:56px;flex-wrap:wrap}
+.top .nome{font-weight:600;color:var(--ink);text-decoration:none}
+.top nav{display:flex;gap:18px;flex-wrap:wrap}
 
-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:9px;border:1px solid var(--line);color:var(--ink);font-weight:500;font-size:.93rem;background:var(--card);transition:border-color .15s,background .15s,transform .15s}
-.btn:hover{border-color:var(--accent);color:var(--ink)}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.btn.primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);color:var(--accent-ink)}
+.sub{font:1.05rem var(--sans);color:var(--mute);margin:8px 0 28px}
+.lede{font-size:1.2rem}
 
-/* hero */
-.hero{padding-top:64px;padding-bottom:52px;display:grid;grid-template-columns:1.45fr .85fr;gap:44px;align-items:start}
-.hero .where{display:flex;align-items:center;gap:8px;color:var(--mute);font-size:.93rem;margin-bottom:14px}
-.hero .role{font-size:1.22rem;color:var(--accent);font-weight:500;margin:10px 0 18px}
-.hero .lede{max-width:600px;font-size:1.06rem}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.profile{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-.avatar{width:72px;height:72px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:1.5rem;font-weight:600;letter-spacing:.02em;margin-bottom:14px}
-.avail{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:500;margin-bottom:14px}
-.avail:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 22%,transparent)}
-.profile ul{list-style:none;margin:0;padding:0;display:grid;gap:11px;font-size:.94rem}
-.profile li{display:flex;gap:10px;align-items:flex-start}
-.profile li .i{color:var(--accent);margin-top:.18em}
-.social{display:flex;gap:8px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
-.social a{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--line);border-radius:9px;color:var(--ink);transition:border-color .15s,color .15s}
-.social a:hover{border-color:var(--accent);color:var(--accent)}
-.social .i{width:1.1rem;height:1.1rem}
+dl{display:grid;grid-template-columns:130px 1fr;gap:10px 20px;margin:28px 0 0;font-size:.98rem}
+dt{font:600 .86rem var(--sans);color:var(--mute);padding-top:.15em}
+dd{margin:0}
 
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-bottom:56px}
-.stat{padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
-.stat b{display:block;font-size:1.55rem;line-height:1.2;font-weight:600}
-.stat span{color:var(--mute);font-size:.9rem}
+.entry{margin:0 0 26px}
+.entry h3{margin-bottom:4px}
+.entry p{margin:0 0 6px}
+.entry .go{font:.92rem var(--sans)}
 
-/* secoes */
-section{padding:60px 0;border-top:1px solid var(--line)}
-section.alt{background:var(--bg2)}
-.head{margin-bottom:28px}
-.head p{color:var(--mute);margin-top:8px;max-width:660px}
+.rows{display:grid;gap:18px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:4px 20px}
+.row .when{font:.88rem var(--sans);color:var(--mute);padding-top:.25em}
+.row p{margin:0 0 6px}
+.row ul{margin:6px 0 0;padding-left:1.1em}
+.row li{margin:4px 0}
 
-.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-.chip{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;background:var(--accent-soft);color:var(--accent);margin-bottom:14px}
-.chip .i{width:1.3rem;height:1.3rem}
-.panel h3{margin-bottom:12px}
-ul.tick{list-style:none;margin:0;padding:0;display:grid;gap:9px}
-ul.tick li{display:flex;gap:10px;align-items:flex-start}
-ul.tick li .i{color:var(--accent);margin-top:.2em;width:1em;height:1em;stroke-width:2.4}
+.projects{display:grid;gap:16px}
+.projects p{margin:0}
+.projects strong{font-weight:600}
 
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:border-color .15s,transform .15s}
-.card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.card h3{font-size:1.14rem}
-.card .sub{color:var(--mute);font-size:.9rem;margin:3px 0 12px}
-.card .go{margin-top:auto;padding-top:18px;font-weight:500;display:inline-flex;align-items:center;gap:6px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-.tag{font-size:.78rem;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:999px;font-weight:500}
-
-.list{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);overflow:hidden}
-.item{display:grid;grid-template-columns:240px 1fr;gap:6px 28px;padding:20px 24px;border-bottom:1px solid var(--line)}
-.item:last-child{border-bottom:0}
-.item .name{font-weight:600}
-.item .name small{display:block;color:var(--mute);font-weight:400;font-size:.88rem}
-.item .note{display:block;color:var(--mute);font-size:.86rem;margin-top:4px}
-.status{display:inline-block;font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:middle;background:var(--accent-soft);color:var(--accent)}
-
-/* experiencia em linha do tempo */
-.timeline{position:relative;margin-left:8px;padding-left:30px;border-left:2px solid var(--line)}
-.job{position:relative;padding-bottom:30px}
-.job:last-child{padding-bottom:0}
-.job:before{content:"";position:absolute;left:-39px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
-.job .when{color:var(--mute);font-size:.9rem;margin-bottom:2px}
-.job h3{margin-bottom:4px}
-.job ul{margin:8px 0 0;padding-left:18px}
-.job li{margin:5px 0}
-
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-
-.contact .big{font-size:1.5rem;font-weight:600}
-.contact .big a{color:var(--ink)}
-.contact .big a:hover{color:var(--accent)}
-footer{padding:28px 0;color:var(--mute);font-size:.88rem;border-top:1px solid var(--line)}
-
-@media (max-width:860px){
-  nav a.l{display:none}
-  .hero{grid-template-columns:1fr;gap:28px}
-  .stats{grid-template-columns:1fr 1fr}
-  .two,.cards,.skills{grid-template-columns:1fr}
-  .item{grid-template-columns:1fr}
+/* passo a passo da implantacao */
+.steps{margin:20px 0 0}
+.stepbar{display:flex;gap:6px;margin:0 0 18px;padding:0;list-style:none;position:relative}
+.stepbar li{flex:1;min-width:0}
+.stepbtn{all:unset;box-sizing:border-box;display:flex;flex-direction:column;align-items:flex-start;gap:6px;width:100%;cursor:pointer;font:.8rem var(--sans);color:var(--mute);padding:0}
+.stepbtn .bar{display:block;height:4px;width:100%;border-radius:2px;background:var(--line);transition:background .25s}
+.stepbtn .n{font-weight:600;color:var(--ink)}
+.stepbtn .t{display:block;line-height:1.25}
+.stepbtn:hover .bar{background:color-mix(in srgb,var(--link) 45%,var(--line))}
+.stepbtn[aria-selected="true"] .bar{background:var(--link)}
+.stepbtn[aria-selected="true"] .t{color:var(--ink);font-weight:600}
+.stepbtn:focus-visible{outline:2px solid var(--link);outline-offset:4px;border-radius:3px}
+.steppanel{border-left:3px solid var(--link);padding:2px 0 2px 20px;min-height:230px;animation:fade .25s ease}
+.steppanel h3{font-size:1.15rem;margin-bottom:8px}
+.steppanel dl{display:block;margin:12px 0 0;font-size:.98rem}
+.steppanel dt{margin:12px 0 2px}
+.steppanel dd{margin:0}
+.stepnav{display:flex;gap:10px;margin-top:16px;font:.9rem var(--sans)}
+.stepnav button{all:unset;cursor:pointer;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.stepnav button[disabled]{color:var(--mute);text-decoration:none;cursor:default}
+.stepnav button:focus-visible{outline:2px solid var(--link);outline-offset:3px;border-radius:3px}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (max-width:620px){
+  .stepbar{flex-wrap:wrap}
+  .stepbar li{flex:0 0 calc(25% - 6px)}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-@media print{header.bar{position:static}}
+@media (prefers-reduced-motion:reduce){.steppanel{animation:none}}
+
+.icon{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.12em;margin-right:6px}
+.contact a{font:1rem var(--sans)}
+.contact .email{font-size:1.5rem;font-family:var(--serif)}
+.contact ul{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px}
+footer{margin-top:64px;font:.85rem var(--sans);color:var(--mute)}
+
+@media (max-width:620px){
+  body{font-size:17px}
+  h1{font-size:2rem}
+  dl{grid-template-columns:1fr;gap:2px}
+  dd{margin-bottom:12px}
+  .row{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<div class="page" id="topo">
 
-<!-- Icones Lucide (lucide.dev, licenca ISC), embutidos para nao depender de biblioteca externa -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
-  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
-  <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></symbol>
-  <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
-  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
-  <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></symbol>
-  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
-  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
-  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
-  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
-  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
-  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
-  <symbol id="i-file" viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
-  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></symbol>
-  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
-</svg>
-
-<header class="bar">
-  <div class="wrap">
-    <a class="brand" href="#topo"><span class="mono">RF</span>Ronaldo Ferreira</a>
+  <div class="top">
+    <a class="nome" href="#topo">Ronaldo Ferreira</a>
     <nav>
-      <a class="l" href="#faco">O que faço</a>
-      <a class="l" href="#casos">Casos</a>
-      <a class="l" href="#projetos">Projetos</a>
-      <a class="l" href="#experiencia">Experiência</a>
-      <a class="btn primary" href="curriculo-implantacao.pdf" download><svg class="i"><use href="#i-download"/></svg>Currículo</a>
+      <a href="#casos">Casos</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#trabalho">Experiência</a>
+      <a href="#contato">Contato</a>
     </nav>
   </div>
-</header>
 
-<main id="topo">
+  <header>
+    <h1>Ronaldo Ferreira</h1>
+    <p class="sub">Analista de implantação e de produto &middot; São Gonçalo, RJ</p>
+  </header>
 
-  <div class="wrap hero">
-    <div>
-      <p class="where"><svg class="i"><use href="#i-pin"/></svg>São Gonçalo, RJ</p>
-      <h1>Ronaldo Ferreira</h1>
-      <p class="role">Analista de Implantação e Produto</p>
-      <p class="lede">Tenho mais de 2 anos em uma empresa de software pequena, onde fui de front-end a Product Owner. Participei de mais de 100 reuniões com clientes, treinei o time comercial todos os dias e construí dois ERPs do zero. Procuro uma vaga júnior de implantação de sistemas ou de produto.</p>
-      <div class="cta">
-        <a class="btn primary" href="curriculo-implantacao.pdf" download><svg class="i"><use href="#i-download"/></svg>Currículo de implantação</a>
-        <a class="btn" href="curriculo-produto.pdf" download><svg class="i"><use href="#i-download"/></svg>Currículo de produto</a>
-      </div>
-    </div>
+  <p class="lede">Trabalho com software há pouco mais de dois anos, numa empresa pequena, onde passei por front-end, full stack, produto e pré-vendas. Fui Product Owner do BoraRachar, construí dois ERPs do zero e participei de mais de 100 reuniões com clientes. Também dei treinamento diário de TI para o time comercial.</p>
+  <p>Agora procuro minha primeira vaga formal como analista de implantação ou de produto. Gosto de entender como o cliente trabalha de verdade, deixar o sistema funcionando para ele e, com o tempo, chegar a Product Owner.</p>
 
-    <aside class="profile" aria-label="Resumo do perfil">
-      <div class="avatar" aria-hidden="true">RF</div>
-      <div class="avail">Disponível para vagas júnior</div>
-      <ul>
-        <li><svg class="i"><use href="#i-briefcase"/></svg><span>Implantação de sistemas e produto</span></li>
-        <li><svg class="i"><use href="#i-pin"/></svg><span>Remoto, híbrido ou presencial no RJ e região</span></li>
-        <li><svg class="i"><use href="#i-cap"/></svg><span>Engenharia de Software, Estácio (2027)</span></li>
-        <li><svg class="i"><use href="#i-globe"/></svg><span>Português nativo, inglês avançado</span></li>
-      </ul>
-      <div class="social">
-        <a href="mailto:ronaldofojr1@gmail.com" aria-label="E-mail" title="E-mail"><svg class="i"><use href="#i-mail"/></svg></a>
-        <a href="https://www.linkedin.com/in/ronaldo-ferreira-dev/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="i"><use href="#i-linkedin"/></svg></a>
-        <a href="https://github.com/ronaldofojrdev" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg class="i"><use href="#i-github"/></svg></a>
-        <a href="https://wa.me/5521989854317" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg class="i"><use href="#i-whatsapp"/></svg></a>
-      </div>
-    </aside>
+  <dl>
+    <dt>Procuro</dt><dd>Vaga júnior de implantação de sistemas ou de produto</dd>
+    <dt>Onde</dt><dd>Remoto, híbrido ou presencial no RJ e região</dd>
+    <dt>Formação</dt><dd>Engenharia de Software, Estácio (EAD), conclusão em 2027</dd>
+    <dt>Inglês</dt><dd>Avançado (EF SET, nível C1)</dd>
+    <dt>Currículos</dt><dd><a href="curriculo-implantacao.pdf" download>Implantação (PDF)</a> &middot; <a href="curriculo-produto.pdf" download>Produto (PDF)</a></dd>
+  </dl>
+
+  <h2 id="passo-a-passo">Como eu faço uma implantação</h2>
+  <p class="muted">Este é o roteiro que documentei nos casos abaixo e que eu seguiria com um cliente novo. Clique nas etapas (ou use as setas do teclado).</p>
+  <div class="steps" id="steps" aria-live="polite">
+    <ol class="stepbar" role="tablist" aria-label="Etapas da implantação" id="stepbar"></ol>
+    <div class="steppanel" id="steppanel" role="tabpanel" tabindex="0"></div>
+    <div class="stepnav"><button type="button" id="prev">Etapa anterior</button><button type="button" id="next">Próxima etapa</button></div>
   </div>
 
-  <div class="wrap stats" aria-label="Números">
-    <div class="stat"><b>2+ anos</b><span>em empresa de software</span></div>
-    <div class="stat"><b>2 ERPs</b><span>construídos do zero</span></div>
-    <div class="stat"><b>100+</b><span>reuniões com clientes e leads</span></div>
-    <div class="stat"><b>1.000+</b><span>usuários no BoraRachar</span></div>
+  <h2 id="casos">Casos de implantação</h2>
+  <p class="muted">O código é privado, então escrevi cada caso com o problema, o que construí e o roteiro que eu seguiria para implantar.</p>
+
+  <div class="entry">
+    <h3>Litso, ERP para barbearias e salões</h3>
+    <p>Fui o único responsável por requisitos, roadmap, desenvolvimento e testes. Agenda, comissões, financeiro, estoque, PDV, caixa, WhatsApp e link de agendamento. Está finalizado e foi pausado por falta de tração comercial.</p>
+    <a class="go" href="https://github.com/ronaldofojrdev/casos/blob/main/casos/litso-erp.md" target="_blank" rel="noopener">Ler o caso e o roteiro de implantação</a>
+  </div>
+  <div class="entry">
+    <h3>ERP e PDV para varejo, com NFC-e do RJ</h3>
+    <p>Escrevi quase todo o sistema: PDV com atalhos, caixa por sessão, estoque, compras, financeiro, geração de XML, QR Code e DANFE da NFC-e e impressão térmica. Os módulos são ligados por configuração.</p>
+    <a class="go" href="https://github.com/ronaldofojrdev/casos/blob/main/casos/erp-pdv-varejo.md" target="_blank" rel="noopener">Ler o caso e o roteiro de implantação</a>
   </div>
 
-  <section id="faco" class="alt">
-    <div class="wrap">
-      <div class="head"><h2>O que eu faço</h2><p>Duas frentes que se completam: colocar o sistema para funcionar no cliente e decidir o que o produto precisa ter.</p></div>
-      <div class="two">
-        <div class="panel">
-          <div class="chip"><svg class="i"><use href="#i-rocket"/></svg></div>
-          <h3>Implantação</h3>
-          <ul class="tick">
-            <li><svg class="i"><use href="#i-check"/></svg>Levantamento do processo do cliente e reunião de kick-off</li>
-            <li><svg class="i"><use href="#i-check"/></svg>Configuração e testes de ponta a ponta do sistema</li>
-            <li><svg class="i"><use href="#i-check"/></svg>Carga de dados a partir de planilhas</li>
-            <li><svg class="i"><use href="#i-check"/></svg>Treinamento da equipe e acompanhamento do go-live</li>
-            <li><svg class="i"><use href="#i-check"/></svg>Documentação do roteiro de implantação</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <div class="chip"><svg class="i"><use href="#i-clipboard"/></svg></div>
-          <h3>Requisitos e produto</h3>
-          <ul class="tick">
-            <li><svg class="i"><use href="#i-check"/></svg>Requisitos, user stories e backlog</li>
-            <li><svg class="i"><use href="#i-check"/></svg>Roadmap e planejamento de sprints (Azure DevOps e Jira)</li>
-            <li><svg class="i"><use href="#i-check"/></svg>Ponte entre cliente, design e desenvolvimento</li>
-            <li><svg class="i"><use href="#i-check"/></svg>Validação da entrega e análise com SQL e Power BI</li>
-            <li><svg class="i"><use href="#i-check"/></svg>Experiência real como Product Owner</li>
-          </ul>
-        </div>
+  <h2 id="projetos">Outros projetos</h2>
+  <p class="muted">Alguns estão no ar, outros são de clientes e ficam sob sigilo. Posso mostrar o código em entrevista quando for permitido.</p>
+  <div class="projects">
+    <p><strong>BoraRachar</strong> (no ar). Aplicativo e site para dividir custos de corridas e despesas em grupo. Fui Product Owner de set a dez/2024 e, desde jan/2025, sou o responsável técnico: AWS, backup e monitoramento de logs. Mais de 1.000 usuários e mais de 30 rachas. <a href="https://borarachar.com.br" target="_blank" rel="noopener">borarachar.com.br</a></p>
+    <p><strong>MWPay.</strong> Front-end em React de um banco digital, cliente da Green Code (jan a set/2024), em time com back-end e design.</p>
+    <p><strong>Monitor de canais do Telegram.</strong> Scraper em Python com carga no Elasticsearch, dashboard e nuvem de palavras, para um cliente do setor político (nome sob sigilo).</p>
+    <p><strong>Africa Creative.</strong> Automação de cerca de 16 GB de planilhas, alimentando dashboards em Power BI.</p>
+    <p><strong>Prospecção comercial com IA.</strong> Descobre leads, calcula um score, gera mensagens e manda tudo para aprovação humana em um painel.</p>
+    <p><strong>Atendimento por WhatsApp para clínicas.</strong> Fluxo automatizado com integração de faturamento. <a href="https://github.com/ronaldofojrdev/atendente-whatsapp-clinicas" target="_blank" rel="noopener">Versão de código aberto</a></p>
+    <p><strong>Bot de propostas com IA local.</strong> Python com Ollama e regras de validação antes de qualquer envio. <a href="https://github.com/ronaldofojrdev/freelas-bot" target="_blank" rel="noopener">Código aberto</a></p>
+  </div>
+
+  <h2 id="trabalho">Experiência</h2>
+  <div class="rows">
+    <div class="row">
+      <div class="when">jan/2025 até hoje</div>
+      <div>
+        <h3>Desenvolvedor autônomo, BoraRachar</h3>
+        <p>Único responsável técnico: suporte, novas funcionalidades, infraestrutura na AWS (EC2 e backup automático) e troca do provedor de geolocalização para o Amazon Location.</p>
       </div>
     </div>
-  </section>
-
-  <section id="casos">
-    <div class="wrap">
-      <div class="head"><h2>Casos de implantação</h2><p>O código é privado, então documentei cada caso com o problema, o que construí e o roteiro de implantação.</p></div>
-      <div class="cards">
-        <article class="card">
-          <div class="chip"><svg class="i"><use href="#i-layers"/></svg></div>
-          <h3>Litso: ERP para barbearias e salões</h3>
-          <p class="sub">Único responsável por requisitos, roadmap, desenvolvimento e testes</p>
-          <p>Agenda, comissões, financeiro, estoque, PDV, caixa, WhatsApp (lembretes, promoções e chatbot) e link de agendamento. Produto finalizado, pausado por falta de tração comercial.</p>
-          <div class="tags"><span class="tag">ERP</span><span class="tag">Multi-cliente</span><span class="tag">TypeScript</span><span class="tag">React</span></div>
-          <a class="go" href="https://github.com/ronaldofojrdev/casos/blob/main/casos/litso-erp.md" target="_blank" rel="noopener">Ler o caso e o roteiro de implantação<svg class="i"><use href="#i-arrow"/></svg></a>
-        </article>
-        <article class="card">
-          <div class="chip"><svg class="i"><use href="#i-file"/></svg></div>
-          <h3>ERP e PDV para varejo, com NFC-e (RJ)</h3>
-          <p class="sub">Escrevi quase todo o sistema</p>
-          <p>PDV com atalhos, caixa por sessão, estoque, compras, financeiro, geração de XML, QR Code e DANFE da NFC-e do RJ e impressão em impressora térmica. Módulos ligados por configuração.</p>
-          <div class="tags"><span class="tag">PDV</span><span class="tag">Fiscal</span><span class="tag">PHP</span><span class="tag">MySQL</span></div>
-          <a class="go" href="https://github.com/ronaldofojrdev/casos/blob/main/casos/erp-pdv-varejo.md" target="_blank" rel="noopener">Ler o caso e o roteiro de implantação<svg class="i"><use href="#i-arrow"/></svg></a>
-        </article>
+    <div class="row">
+      <div class="when">jan/2024 a out/2026</div>
+      <div>
+        <h3>Green Code, empresa de software</h3>
+        <p class="muted">Estagiário, com atuação como desenvolvedor full stack e Product Owner</p>
+        <ul>
+          <li>Product Owner do BoraRachar: requisitos, user stories, roadmap, sprints no Azure DevOps e mediação entre cliente, designer e time.</li>
+          <li>Construí o Litso e o ERP de varejo, do requisito ao teste.</li>
+          <li>Mais de 100 reuniões com clientes e leads e treinamento diário de 1 hora de TI para o time comercial.</li>
+          <li>Front-end do MWPay, scraper de Telegram com Elasticsearch e automação de planilhas para Power BI.</li>
+          <li>Organização da documentação de licitações de TI.</li>
+        </ul>
       </div>
     </div>
+  </div>
+
+  <h2>Ferramentas e cursos</h2>
+  <p><strong>Gestão e requisitos:</strong> Azure DevOps, Jira, Confluence, ClickUp, Trello, Notion, Figma. <strong>Dados:</strong> SQL, Power BI, Excel, Elasticsearch. <strong>Desenvolvimento:</strong> React, Node.js, TypeScript, Python, Java. <strong>Infraestrutura:</strong> AWS, Docker, Git.</p>
+  <p><strong>Cursos e certificados:</strong> EF SET English Certificate, nível C1 Advanced (leitura e escrita); Gestão Financeira (20 h), Omie.Academy.</p>
+
+  <section class="contact" id="contato">
+    <h2>Contato</h2>
+    <p>Se a vaga for de implantação ou de produto, vou gostar de conversar.</p>
+    <a class="email" href="mailto:ronaldofojr1@gmail.com">ronaldofojr1@gmail.com</a>
+    <ul>
+      <li><a href="https://wa.me/5521989854317" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>WhatsApp</a></li>
+      <li><a href="https://www.linkedin.com/in/ronaldo-ferreira-dev/" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></li>
+      <li><a href="https://github.com/ronaldofojrdev" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>GitHub</a></li>
+      <li><a href="curriculo-implantacao.pdf" download><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>Currículo de implantação</a></li>
+      <li><a href="curriculo-produto.pdf" download><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>Currículo de produto</a></li>
+    </ul>
   </section>
 
-  <section id="projetos" class="alt">
-    <div class="wrap">
-      <div class="head"><h2>Outros projetos</h2><p>Alguns estão no ar, outros são de clientes e ficam sob sigilo. O código de empresas e clientes é privado e posso apresentá-lo em entrevista quando for permitido.</p></div>
-      <div class="list">
-        <div class="item">
-          <div class="name">BoraRachar<span class="status">No ar</span><small>Product Owner e responsável técnico</small></div>
-          <div class="what">Aplicativo e site para dividir custos de corridas e despesas em grupo. Fui Product Owner (set a dez/2024): requisitos, user stories, roadmap e sprints no Azure DevOps. Desde jan/2025 sou o responsável técnico, com infraestrutura na AWS (EC2, backup e monitoramento de logs). Mais de 1.000 usuários e mais de 30 rachas. <a href="https://borarachar.com.br" target="_blank" rel="noopener">borarachar.com.br</a></div>
-        </div>
-        <div class="item">
-          <div class="name">MWPay<small>Desenvolvedor front-end</small></div>
-          <div class="what">Front-end em React de um banco digital, cliente da Green Code (jan a set/2024), em time com back-end e design.<span class="note">Código privado.</span></div>
-        </div>
-        <div class="item">
-          <div class="name">Monitor de canais do Telegram<small>Dados e scraping</small></div>
-          <div class="what">Scraper em Python de canais e grupos do Telegram, com carga no Elasticsearch, dashboard e nuvem de palavras, para um cliente do setor político.<span class="note">Cliente e código sob sigilo.</span></div>
-        </div>
-        <div class="item">
-          <div class="name">Africa Creative<small>Planilhas e Power BI</small></div>
-          <div class="what">Automação de cerca de 16 GB de planilhas, alimentando dashboards em Power BI e eliminando tarefas manuais da rotina do cliente.<span class="note">Código privado.</span></div>
-        </div>
-        <div class="item">
-          <div class="name">Prospecção comercial com IA<small>Automação</small></div>
-          <div class="what">Sistema que descobre leads, calcula um score, gera mensagens com IA e envia tudo para aprovação humana em um painel web.<span class="note">Código privado.</span></div>
-        </div>
-        <div class="item">
-          <div class="name">Atendimento por WhatsApp<small>Automação para clínicas</small></div>
-          <div class="what">Fluxo de atendimento automatizado, com integração de faturamento, para reduzir o trabalho manual da recepção. <a href="https://github.com/ronaldofojrdev/atendente-whatsapp-clinicas" target="_blank" rel="noopener">Versão de código aberto no GitHub</a></div>
-        </div>
-        <div class="item">
-          <div class="name">Bot de propostas com IA local<small>Automação</small></div>
-          <div class="what">Bot em Python com modelo de IA local (Ollama), agendado, com regras de validação para controlar erros antes de qualquer envio. <a href="https://github.com/ronaldofojrdev/freelas-bot" target="_blank" rel="noopener">Código aberto no GitHub</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <footer>Ronaldo Ferreira de Oliveira Junior &middot; São Gonçalo, RJ</footer>
+</div>
 
-  <section id="experiencia">
-    <div class="wrap">
-      <div class="head"><h2>Experiência</h2></div>
-      <div class="timeline">
-        <div class="job">
-          <div class="when">jan/2025 até hoje</div>
-          <h3>Desenvolvedor autônomo, BoraRachar</h3>
-          <ul>
-            <li>Único responsável técnico pelo produto: suporte, novas funcionalidades e monitoramento de logs.</li>
-            <li>Infraestrutura na AWS (EC2 e backup automático) e troca do provedor de geolocalização para o Amazon Location.</li>
-          </ul>
-        </div>
-        <div class="job">
-          <div class="when">jan/2024 a out/2026</div>
-          <h3>Green Code, empresa de software</h3>
-          <p class="muted">Estagiário, com atuação como Desenvolvedor Full Stack e Product Owner</p>
-          <ul>
-            <li>Product Owner do BoraRachar (set a dez/2024): requisitos, user stories, roadmap, sprints no Azure DevOps e mediação entre cliente, designer e time.</li>
-            <li>Construí o Litso e um ERP para varejo, cuidando de requisitos, desenvolvimento e testes.</li>
-            <li>Mais de 100 reuniões com clientes e leads e treinamento diário de 1 hora sobre TI para o time comercial.</li>
-            <li>Front-end em React do MWPay, scraper de Telegram com Elasticsearch e automação de planilhas para Power BI.</li>
-            <li>Organização da documentação de licitações de TI.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="formacao" class="alt">
-    <div class="wrap">
-      <div class="head"><h2>Formação, certificados e ferramentas</h2></div>
-      <div class="skills">
-        <div class="panel">
-          <div class="chip"><svg class="i"><use href="#i-cap"/></svg></div>
-          <h3>Formação</h3>
-          <p>Engenharia de Software, Universidade Estácio de Sá (EAD)</p>
-          <p class="muted">Conclusão prevista em 12/2027</p>
-        </div>
-        <div class="panel">
-          <div class="chip"><svg class="i"><use href="#i-award"/></svg></div>
-          <h3>Certificados e cursos</h3>
-          <ul class="tick">
-            <li><svg class="i"><use href="#i-check"/></svg>EF SET English Certificate, nível C1 Advanced (leitura e escrita)</li>
-            <li><svg class="i"><use href="#i-check"/></svg>Gestão Financeira (20 h), Omie.Academy</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <div class="chip"><svg class="i"><use href="#i-wrench"/></svg></div>
-          <h3>Ferramentas</h3>
-          <ul class="tick">
-            <li><svg class="i"><use href="#i-check"/></svg>Gestão: Azure DevOps, Jira, Confluence, ClickUp, Trello, Notion, Figma</li>
-            <li><svg class="i"><use href="#i-check"/></svg>Dados: SQL, Power BI, Excel, Elasticsearch</li>
-            <li><svg class="i"><use href="#i-check"/></svg>Desenvolvimento: React, Node.js, TypeScript, Python, Java</li>
-            <li><svg class="i"><use href="#i-check"/></svg>Infraestrutura: AWS, Docker, Git</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contato" class="contact">
-    <div class="wrap">
-      <div class="head"><h2>Contato</h2><p>Aberto a vagas júnior de implantação e de produto, remoto, híbrido ou presencial no RJ e região.</p></div>
-      <p class="big"><a href="mailto:ronaldofojr1@gmail.com">ronaldofojr1@gmail.com</a></p>
-      <div class="cta">
-        <a class="btn primary" href="https://wa.me/5521989854317" target="_blank" rel="noopener"><svg class="i"><use href="#i-whatsapp"/></svg>WhatsApp</a>
-        <a class="btn" href="https://www.linkedin.com/in/ronaldo-ferreira-dev/" target="_blank" rel="noopener"><svg class="i"><use href="#i-linkedin"/></svg>LinkedIn</a>
-        <a class="btn" href="https://github.com/ronaldofojrdev" target="_blank" rel="noopener"><svg class="i"><use href="#i-github"/></svg>GitHub</a>
-        <a class="btn" href="curriculo-implantacao.pdf" download><svg class="i"><use href="#i-download"/></svg>Currículo de implantação</a>
-        <a class="btn" href="curriculo-produto.pdf" download><svg class="i"><use href="#i-download"/></svg>Currículo de produto</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap">Ronaldo Ferreira de Oliveira Junior &middot; São Gonçalo, RJ</div>
-</footer>
-
+<script>
+(function(){
+  var etapas=[
+    {t:"Levantamento e kick-off",
+     o:"Reunião com o dono do negócio para entender como ele trabalha hoje: serviços, profissionais, formas de pagamento, regras de comissão e como o caixa é fechado. Alinho escopo, prazo e quem decide o quê.",
+     e:"Lista de requisitos priorizada e um combinado de escopo e prazo.",
+     c:"É o primeiro passo do roteiro de implantação que documentei no caso do Litso."},
+    {t:"Configuração",
+     o:"Cadastro do cliente em um ambiente isolado e ajuste das regras do negócio: horários, agenda, financeiro, notificações e fidelidade. Parto de valores padrão e só mudo o que o cliente precisa.",
+     e:"Ambiente configurado e documentado.",
+     c:"No Litso, as regras de cada cliente ficam em uma configuração própria, com padrões, sem mexer no código."},
+    {t:"Carga de dados",
+     o:"Importo serviços, profissionais, produtos e clientes das planilhas que o cliente já usa e confiro amostras com ele antes de seguir.",
+     e:"Base carregada e conferida.",
+     c:"Está no roteiro dos dois casos: partir das planilhas que o cliente já usa, para ele não digitar tudo de novo."},
+    {t:"Testes",
+     o:"Percorro com o cliente os fluxos reais, do começo ao fim: agendar, atender, vender no PDV, abrir e fechar o caixa, conferir comissão e relatório.",
+     e:"Checklist de testes validado com o cliente e lista de ajustes.",
+     c:"O Litso e o ERP de varejo têm caixa e comissão justamente para esse tipo de conferência."},
+    {t:"Treinamento",
+     o:"Treino cada perfil no que ele usa no dia a dia (recepção, profissional, dono), com exemplos do próprio negócio.",
+     e:"Roteiro de treinamento por perfil e material curto de consulta.",
+     c:"Treino de equipe eu já faço na prática: dei treinamento diário de TI ao time comercial da Green Code."},
+    {t:"Go-live",
+     o:"Virada para uso real, com backup e registro de ações ativos e acompanhamento próximo no primeiro dia.",
+     e:"Operação iniciada e pendências do primeiro dia registradas.",
+     c:"O Litso tem rotina de backup e auditoria, que entram no go-live do roteiro."},
+    {t:"Acompanhamento",
+     o:"Tiro dúvidas, corrijo ajustes e levo ao time de produto o que o cliente pediu e não existe ainda.",
+     e:"Lista de melhorias priorizada e cliente estável.",
+     c:"Aqui o trabalho de implantação vira insumo de produto, que é o caminho que eu quero seguir até Product Owner."}
+  ];
+  var bar=document.getElementById('stepbar'),panel=document.getElementById('steppanel'),prev=document.getElementById('prev'),next=document.getElementById('next');
+  var atual=0,btns=[];
+  etapas.forEach(function(e,i){
+    var li=document.createElement('li');
+    var b=document.createElement('button');
+    b.type='button';b.className='stepbtn';b.setAttribute('role','tab');b.id='tab'+i;
+    b.innerHTML='<span class="bar"></span><span class="n">'+(i+1)+'</span><span class="t">'+e.t+'</span>';
+    b.addEventListener('click',function(){ir(i,false)});
+    b.addEventListener('keydown',function(ev){
+      if(ev.key==='ArrowRight'){ev.preventDefault();ir(Math.min(i+1,etapas.length-1),true)}
+      if(ev.key==='ArrowLeft'){ev.preventDefault();ir(Math.max(i-1,0),true)}
+    });
+    li.appendChild(b);bar.appendChild(li);btns.push(b);
+  });
+  function ir(i,foco){
+    atual=i;var e=etapas[i];
+    btns.forEach(function(b,k){b.setAttribute('aria-selected',k===i?'true':'false');b.tabIndex=k===i?0:-1});
+    panel.setAttribute('aria-labelledby','tab'+i);
+    panel.style.animation='none';void panel.offsetWidth;panel.style.animation='';
+    panel.innerHTML='<h3>Etapa '+(i+1)+' de '+etapas.length+': '+e.t+'</h3><p>'+e.o+'</p><dl><dt>O que eu entrego</dt><dd>'+e.e+'</dd><dt>Como aparece nos meus casos</dt><dd>'+e.c+'</dd></dl>';
+    prev.disabled=i===0;next.disabled=i===etapas.length-1;
+    if(foco)btns[i].focus();
+  }
+  prev.addEventListener('click',function(){ir(Math.max(atual-1,0),false)});
+  next.addEventListener('click',function(){ir(Math.min(atual+1,etapas.length-1),false)});
+  ir(0,false);
+})();
+</script>
 </body>
 </html>
