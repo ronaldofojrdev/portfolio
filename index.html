@@ -10,14 +10,11 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ronaldo-ferreira-dev.vercel.app/">
 <meta property="og:image" content="https://ronaldo-ferreira-dev.vercel.app/og-image.png">
-<meta property="og:image:width" content="1584">
-<meta property="og:image:height" content="396">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ronaldo-ferreira-dev.vercel.app/og-image.png">
-<meta name="theme-color" content="#f2ede3">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#ffffff">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Ronaldo Ferreira de Oliveira Junior","jobTitle":"Analista de Implantação e Produto (Product Owner)",
 "email":"mailto:ronaldofojr1@gmail.com","address":{"@type":"PostalAddress","addressLocality":"São Gonçalo","addressRegion":"RJ","addressCountry":"BR"},
@@ -26,565 +23,310 @@
 </script>
 <style>
 :root{
-  --paper:#f2ede3; --ink:#16130e; --mute:#675f52; --line:#16130e24; --accent:#d94a22; --soft:#e9e2d4; --on-accent:#fff;
-  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
-  --mono:"DM Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --bg:#ffffff; --bg2:#f5f6f8; --ink:#16181d; --mute:#5c6470; --line:#e3e6eb;
+  --accent:#1f4fd8; --accent-ink:#ffffff; --accent-soft:#e8eefc; --card:#ffffff;
+  --radius:10px; --max:1040px;
 }
-@media (prefers-color-scheme: dark){
-  :root{--paper:#13110d; --ink:#efe8d8; --mute:#a9a08e; --line:#efe8d82a; --accent:#ff7a4d; --soft:#1c1914; --on-accent:#13110d;}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f1218; --bg2:#151a22; --ink:#eef0f4; --mute:#a3acb8; --line:#262c37; --accent:#7ea2ff; --accent-ink:#0b1020; --accent-soft:#18233f; --card:#131820}
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{background:var(--paper);color:var(--ink);font:17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
-a{color:inherit}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;text-transform:uppercase}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+h1,h2,h3{line-height:1.2;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,5vw,2.9rem);font-weight:750}
+h2{font-size:1.5rem;font-weight:700}
+h3{font-size:1.05rem;font-weight:650}
+p{margin:0}
+.muted{color:var(--mute)}
 
-/* barra fixa */
-.bar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.bar .wrap{display:flex;justify-content:space-between;align-items:center;height:60px;gap:14px}
-.mark{font-family:var(--serif);font-size:26px;text-decoration:none;line-height:1}
-.bar nav{display:flex;gap:22px;align-items:center}
-.bar nav a.n{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--mute)}
-.bar nav a.n:hover{color:var(--ink)}
-.pill{display:inline-block;text-decoration:none;font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;
-  padding:9px 16px;border-radius:999px;background:var(--accent);color:var(--on-accent);font-weight:500;white-space:nowrap}
-.pill:hover{filter:brightness(1.08)}
-@media (max-width:640px){.bar nav a.n{display:none}}
+header.bar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{font-weight:700;color:var(--ink)}
+nav{display:flex;align-items:center;gap:20px;font-size:.93rem}
+nav a{color:var(--mute)}
+nav a:hover{color:var(--ink);text-decoration:none}
+.btn{display:inline-block;padding:10px 16px;border-radius:8px;border:1px solid var(--line);color:var(--ink);font-weight:600;font-size:.93rem;background:var(--card)}
+.btn:hover{text-decoration:none;border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
 
-/* hero */
-.hero{padding:clamp(40px,7vw,90px) 0 clamp(36px,6vw,64px)}
-.avail{display:inline-flex;align-items:center;gap:9px;color:var(--mute);margin-bottom:22px}
-.dot{width:8px;height:8px;border-radius:50%;background:#2e9e5b;position:relative;flex:none}
-.dot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid #2e9e5b;animation:ping 2.2s ease-out infinite}
-@keyframes ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.8);opacity:0}}
-h1{font-family:var(--serif);font-weight:400;font-size:clamp(50px,11vw,140px);line-height:.93;letter-spacing:-.025em}
-h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
-h1 .ch{display:inline-block;will-change:transform}
-h1 em{font-style:italic;color:var(--accent)}
-.under{display:block;width:min(520px,80%);height:18px;margin-top:6px;overflow:visible}
-.under path{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round}
-.lede{font-size:clamp(18px,2.3vw,23px);line-height:1.5;max-width:700px;margin-top:34px}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:13px 22px;border-radius:10px;border:1px solid var(--ink);transition:transform .2s,background .2s,color .2s}
-.btn:hover{transform:translateY(-2px)}
-.btn.main{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-.btn.ghost:hover{background:var(--ink);color:var(--paper)}
-.ulink{position:relative;text-decoration:none;font-family:var(--mono);font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding-bottom:3px}
-.ulink::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform-origin:left;transition:transform .35s}
-.ulink:hover::after{transform:scaleX(.25)}
-.ulink.hot{color:var(--accent)}
-.links{display:flex;flex-wrap:wrap;gap:10px 22px}
+.hero{padding-top:64px;padding-bottom:48px}
+.hero .where{color:var(--mute);font-size:.95rem;margin-bottom:10px}
+.hero .role{font-size:1.25rem;color:var(--accent);font-weight:650;margin:8px 0 18px}
+.hero .lede{max-width:680px;font-size:1.08rem}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.links{display:flex;flex-wrap:wrap;gap:18px;margin-top:20px;font-size:.95rem}
 
-/* resumo em 30s */
-.facts{border-block:1px solid var(--line)}
-.facts .grid{display:grid;grid-template-columns:repeat(3,1fr)}
-.fact{padding:22px 22px 22px 0;border-bottom:1px solid var(--line)}
-.fact:nth-last-child(-n+3){border-bottom:0}
-.fact .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:6px}
-.fact .v{font-family:var(--serif);font-size:25px;line-height:1.2}
-@media (max-width:760px){
-  .facts .grid{grid-template-columns:1fr 1fr}
-  .fact:nth-last-child(-n+3){border-bottom:1px solid var(--line)}
-  .fact:nth-last-child(-n+2){border-bottom:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:44px;background:var(--card)}
+.stat{padding:18px 20px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-size:1.5rem;line-height:1.2}
+.stat span{color:var(--mute);font-size:.9rem}
+
+section{padding:56px 0;border-top:1px solid var(--line)}
+section.alt{background:var(--bg2)}
+.head{margin-bottom:26px}
+.head p{color:var(--mute);margin-top:6px;max-width:680px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.panel h3{margin-bottom:10px}
+ul.clean{margin:0;padding-left:18px}
+ul.clean li{margin:5px 0}
+
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card h3{font-size:1.15rem}
+.card .sub{color:var(--mute);font-size:.9rem;margin:2px 0 12px}
+.card .go{margin-top:auto;padding-top:16px;font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0}
+.tag{font-size:.78rem;background:var(--accent-soft);color:var(--accent);padding:3px 9px;border-radius:999px;font-weight:600}
+
+.list{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);overflow:hidden}
+.item{display:grid;grid-template-columns:230px 1fr;gap:6px 24px;padding:18px 22px;border-bottom:1px solid var(--line)}
+.item:last-child{border-bottom:0}
+.item .name{font-weight:650}
+.item .name small{display:block;color:var(--mute);font-weight:400;font-size:.88rem}
+.item .what{color:var(--ink)}
+.item .what .note{display:block;color:var(--mute);font-size:.86rem;margin-top:4px}
+.status{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle;background:var(--accent-soft);color:var(--accent)}
+
+.job{display:grid;grid-template-columns:200px 1fr;gap:4px 24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.job:last-child{border-bottom:0}
+.job .when{color:var(--mute);font-size:.92rem}
+.job h3{margin-bottom:6px}
+.job ul{margin:6px 0 0;padding-left:18px}
+.job li{margin:4px 0}
+
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skills h3{margin-bottom:6px;font-size:.95rem;color:var(--mute);font-weight:650}
+
+.contact .big{font-size:1.4rem;font-weight:700}
+footer{padding:28px 0;color:var(--mute);font-size:.88rem;border-top:1px solid var(--line)}
+
+@media (max-width:820px){
+  nav a.hide-sm{display:none}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .two,.cards,.skills{grid-template-columns:1fr}
+  .item,.job{grid-template-columns:1fr}
 }
-@media (max-width:480px){.facts .grid{grid-template-columns:1fr}.fact:nth-last-child(-n+2){border-bottom:1px solid var(--line)}.fact:last-child{border-bottom:0}}
-
-section{padding:clamp(52px,8vw,96px) 0}
-.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:20px;margin-bottom:34px;flex-wrap:wrap}
-h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5.6vw,64px);line-height:1;letter-spacing:-.02em}
-.sec-head p{max-width:430px;color:var(--mute);font-size:15px}
-
-/* entrego */
-.three{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
-@media (max-width:820px){.three{grid-template-columns:1fr;gap:26px}}
-.three h3{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.1;margin:8px 0 10px}
-.three p{color:var(--mute);font-size:16px}
-.three .n{font-family:var(--mono);font-size:12px;color:var(--accent)}
-
-/* projetos */
-.proj{border-top:1px solid var(--line)}
-.row{border-bottom:1px solid var(--line)}
-.row>button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:64px 1fr auto 40px;
-  gap:18px;align-items:center;padding:26px 6px;transition:padding .3s,color .3s}
-.row>button:hover{padding-left:16px;color:var(--accent)}
-.row>button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.num{font-family:var(--mono);font-size:13px;color:var(--mute)}
-.ttl{font-family:var(--serif);font-size:clamp(26px,4vw,42px);line-height:1.1}
-.ttl small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);margin-top:7px}
-.live{display:inline-block;vertical-align:middle;margin-left:10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
-  color:#1e7a45;border:1px solid #1e7a45;border-radius:999px;padding:2px 9px;position:relative;top:-4px}
-@media (prefers-color-scheme: dark){.live{color:#58d391;border-color:#58d391}}
-.tags{font-family:var(--mono);font-size:12px;color:var(--mute);text-align:right;max-width:260px}
-.plus{width:28px;height:28px;position:relative;justify-self:end}
-.plus::before,.plus::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);transition:transform .35s}
-.plus::after{transform:translate(-50%,-50%) rotate(90deg)}
-.row.open .plus::after{transform:translate(-50%,-50%) rotate(0deg)}
-.body{height:0;overflow:hidden}
-.body .in{display:grid;grid-template-columns:64px 1fr 1fr;gap:18px 24px;padding:4px 6px 34px}
-.body .in>div:first-child{grid-column:2}
-.body p{color:var(--mute);max-width:560px}
-.body .lab{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:6px}
-.body ul{list-style:none;color:var(--mute);font-size:15.5px}
-.body li{padding:6px 0;border-bottom:1px solid var(--line)}
-.body .note{grid-column:2/-1;font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.03em}
-@media (max-width:760px){
-  .row>button{grid-template-columns:34px 1fr 28px}
-  .tags{display:none}
-  .body .in{grid-template-columns:34px 1fr}
-  .body .in>div:first-child,.body .note,.body .in>div:nth-child(2){grid-column:2}
-}
-
-/* trajetoria */
-.path{position:relative;padding-left:34px;display:grid;gap:34px}
-.fio{position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--accent);transform-origin:top}
-.step{position:relative}
-.step::before{content:"";position:absolute;left:-34px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
-.step .when{font-family:var(--mono);font-size:12.5px;color:var(--mute);letter-spacing:.04em;text-transform:uppercase}
-.step h3{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3vw,32px);margin:4px 0 8px;line-height:1.15}
-.step ul{color:var(--mute);font-size:15.5px;padding-left:18px;max-width:640px}
-.growth{margin-top:44px;padding:22px 24px;border:1px solid var(--line);border-radius:14px;background:var(--soft);display:flex;gap:18px;align-items:baseline;flex-wrap:wrap}
-.growth strong{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.2}
-.growth span{color:var(--mute);font-size:15px}
-
-/* stack */
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:34px 28px}
-.cols h4{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:12px}
-.cols p{font-family:var(--serif);font-size:23px;line-height:1.35}
-
-/* como trabalho */
-.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px}
-.how div{border-top:2px solid var(--ink);padding-top:14px}
-.how h3{font-family:var(--serif);font-weight:400;font-size:26px;margin-bottom:6px}
-.how p{color:var(--mute);font-size:15.5px}
-
-/* contato */
-.contact{background:var(--soft);border-block:1px solid var(--line)}
-.big-mail{display:inline-block;font-family:var(--serif);font-size:clamp(28px,6.4vw,76px);line-height:1.05;text-decoration:none;letter-spacing:-.02em;position:relative;word-break:break-all}
-.big-mail::after{content:"";position:absolute;left:0;bottom:-4px;height:3px;width:100%;background:var(--accent);transform-origin:left;transition:transform .5s}
-.big-mail:hover::after{transform:scaleX(.18)}
-.contact .cta{margin-top:30px}
-footer{padding:28px 0 52px;color:var(--mute);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
-[data-r]{opacity:0}
-@media (prefers-reduced-motion: reduce){
-  [data-r]{opacity:1}
-  .dot::after{animation:none}
-  html{scroll-behavior:auto}
-}
+@media print{header.bar{position:static}}
 </style>
 </head>
 <body>
 
 <header class="bar">
   <div class="wrap">
-    <a class="mark" href="#topo" aria-label="Início">rf.</a>
+    <a class="brand" href="#topo">Ronaldo Ferreira</a>
     <nav>
-      <a class="n" href="#projetos">Projetos</a>
-      <a class="n" href="#experiencia">Experiência</a>
-      <a class="n" href="#stack">Stack</a>
-      <a class="n" href="#contato">Contato</a>
-      <a class="pill" href="curriculo-implantacao.pdf" download>Currículo PDF</a>
+      <a class="hide-sm" href="#faco">O que faço</a>
+      <a class="hide-sm" href="#casos">Casos</a>
+      <a class="hide-sm" href="#projetos">Projetos</a>
+      <a class="hide-sm" href="#experiencia">Experiência</a>
+      <a class="btn primary" href="curriculo-implantacao.pdf" download>Currículo</a>
     </nav>
   </div>
 </header>
 
 <main id="topo">
+
   <div class="wrap hero">
-    <span class="avail mono" data-r><span class="dot"></span>Disponível para vagas júnior de implantação e produto &middot; Remoto ou híbrido no RJ</span>
-    <h1 id="nome" aria-label="Ronaldo Ferreira, implantação e produto">
-      <span class="line">Ronaldo</span>
-      <span class="line">Ferreira<em>,</em></span>
-      <span class="line"><em>implantação e produto.</em></span>
-    </h1>
-    <svg class="under" viewBox="0 0 520 18" preserveAspectRatio="none" aria-hidden="true">
-      <path id="sublinhado" d="M2 12 C 70 2, 140 17, 230 9 S 400 4, 450 11 S 500 8, 518 6"/>
-    </svg>
-    <p class="lede" data-r>Profissional de TI com mais de 2 anos em empresa de software. Participei de mais de 100 reuniões com clientes, dei treinamento diário a equipes, escrevi requisitos, planejei sprints e construí dois ERPs e um app com mais de 1.000 usuários. Levo o sistema do levantamento ao go-live e entendo o negócio e o código.</p>
-    <div class="cta" data-r>
-      <a class="btn main" href="curriculo-implantacao.pdf" download>Currículo: implantação (PDF)</a>
-      <a class="btn ghost" href="curriculo-produto.pdf" download>Currículo: produto (PDF)</a>
-      <a class="btn ghost" href="https://wa.me/5521989854317" target="_blank" rel="noopener">Chamar no WhatsApp</a>
-      <a class="btn ghost" href="mailto:ronaldofojr1@gmail.com">Enviar e-mail</a>
+    <p class="where">São Gonçalo, RJ &middot; Remoto ou híbrido no RJ &middot; Disponível para vagas júnior</p>
+    <h1>Ronaldo Ferreira</h1>
+    <p class="role">Analista de Implantação e Produto</p>
+    <p class="lede">Tenho mais de 2 anos em uma empresa de software pequena, onde fui de front-end a Product Owner. Participei de mais de 100 reuniões com clientes, treinei o time comercial todos os dias e construí dois ERPs do zero. Procuro uma vaga júnior de implantação de sistemas ou de produto.</p>
+    <div class="cta">
+      <a class="btn primary" href="curriculo-implantacao.pdf" download>Currículo de implantação (PDF)</a>
+      <a class="btn" href="curriculo-produto.pdf" download>Currículo de produto (PDF)</a>
     </div>
-    <div class="links" style="margin-top:22px" data-r>
-      <a class="ulink" href="https://www.linkedin.com/in/ronaldo-ferreira-dev/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="ulink" href="https://github.com/ronaldofojrdev" target="_blank" rel="noopener">GitHub</a>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/ronaldo-ferreira-dev/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/ronaldofojrdev" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:ronaldofojr1@gmail.com">ronaldofojr1@gmail.com</a>
+      <a href="https://wa.me/5521989854317" target="_blank" rel="noopener">WhatsApp</a>
     </div>
-  </div>
 
-  <div class="facts" aria-label="Resumo rápido">
-    <div class="wrap grid">
-      <div class="fact" data-r><span class="k">Perfil</span><span class="v">Implantação e Produto (PO)</span></div>
-      <div class="fact" data-r><span class="k">Experiência</span><span class="v">2+ anos em produtos reais</span></div>
-      <div class="fact" data-r><span class="k">Ferramentas</span><span class="v">SQL, Jira, Azure DevOps, Power BI, Scrum</span></div>
-      <div class="fact" data-r><span class="k">Diferencial</span><span class="v">Requisitos, treinamento e código</span></div>
-      <div class="fact" data-r><span class="k">Modelo</span><span class="v">Remoto ou híbrido no RJ</span></div>
-      <div class="fact" data-r><span class="k">Idiomas</span><span class="v">Português nativo, inglês avançado</span></div>
+    <div class="stats" aria-label="Resumo">
+      <div class="stat"><b>2+ anos</b><span>em empresa de software</span></div>
+      <div class="stat"><b>2 ERPs</b><span>construídos do zero</span></div>
+      <div class="stat"><b>100+</b><span>reuniões com clientes e leads</span></div>
+      <div class="stat"><b>1.000+</b><span>usuários no BoraRachar</span></div>
     </div>
   </div>
 
-  <section id="entrego">
+  <section id="faco" class="alt">
     <div class="wrap">
-      <div class="sec-head"><h2 data-r>O que eu entrego</h2><p data-r>O que eu posso fazer pelo seu time desde o primeiro mês.</p></div>
-      <div class="three">
-        <div data-r><span class="n">01</span><h3>Implantação</h3><p>Entendo como o cliente trabalha, configuro e testo o sistema, preparo a carga de dados, treino a equipe e acompanho o go-live. Tenho dois ERPs construídos e um roteiro de implantação documentado para cada um.</p></div>
-        <div data-r><span class="n">02</span><h3>Requisitos e produto</h3><p>Levanto a necessidade com o cliente, escrevo requisitos e user stories, mantenho o backlog, planejo as sprints no Azure DevOps e acompanho a entrega até a validação. Já fui Product Owner.</p></div>
-        <div data-r><span class="n">03</span><h3>Ponte entre negócio e TI</h3><p>Mais de 100 reuniões com clientes e leads e treino diário de TI para o time comercial. Também desenvolvo (React, Node.js, SQL e AWS), então sei o que é viável.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projetos" style="border-top:1px solid var(--line)">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 data-r>Projetos</h2>
-        <p data-r>Alguns no ar, outros sob sigilo. O código de empresas e clientes é privado, e posso apresentá-lo em entrevista quando for permitido.</p>
-      </div>
-
-      <div class="proj" id="lista">
-        <div class="row" data-r>
-          <button aria-expanded="false" aria-controls="p1">
-            <span class="num">01</span>
-            <span class="ttl">BoraRachar<span class="live">No ar</span><small>Product Owner e responsável técnico</small></span>
-            <span class="tags">Produto / AWS / Mobile</span>
-            <span class="plus"></span>
-          </button>
-          <div class="body" id="p1"><div class="in">
-            <div>
-              <span class="lab">Problema</span>
-              <p>Dividir custos de corridas e despesas em grupo de forma simples, pelo celular ou pela web.</p>
-              <span class="lab" style="margin-top:16px">O que eu fiz</span>
-              <p>Participei das reuniões comerciais e ajudei a fechar a venda esclarecendo as dúvidas técnicas. Depois fui Product Owner (set a dez/2024): escrevi requisitos, user stories, fluxos e roadmap, planejei as sprints no Azure DevOps e fiz a ponte entre cliente, designer e time. Desde jan/2025 sou o responsável técnico: transformei o MVP em produto completo, com infraestrutura na AWS (EC2, backup automático e monitoramento de logs) e troca do provedor de geolocalização para o Amazon Location. Hoje são mais de 1.000 usuários cadastrados e mais de 30 rachas.</p>
-              <div class="links" style="margin-top:20px">
-                <a class="ulink hot" href="https://borarachar.com.br" target="_blank" rel="noopener">Site</a>
-                <a class="ulink hot" href="https://app.borarachar.com.br" target="_blank" rel="noopener">Aplicação web</a>
-              </div>
-            </div>
-            <ul>
-              <li>Requisitos, roadmap e sprints</li>
-              <li>Suporte e evolução contínua</li>
-              <li>AWS: EC2, backup e logs</li>
-              <li>Sign in with Apple e App Store</li>
-            </ul>
-          </div></div>
-        </div>
-
-        <div class="row" data-r>
-          <button aria-expanded="false" aria-controls="p9">
-            <span class="num">02</span>
-            <span class="ttl">Litso<span class="live">Finalizado</span><small>ERP para barbearias, produto completo</small></span>
-            <span class="tags">TypeScript / React / WhatsApp</span>
-            <span class="plus"></span>
-          </button>
-          <div class="body" id="p9"><div class="in">
-            <div>
-              <span class="lab">Problema</span>
-              <p>Salões, barbearias, clínicas de estética e pet shops controlam agenda, comissões e estoque em planilhas e perdem tempo e dinheiro.</p>
-              <span class="lab" style="margin-top:16px">O que eu fiz</span>
-              <p>Fui o único responsável pelo Litso: requisitos, roadmap, desenvolvimento, testes e correções. É um ERP completo para barbearias e salões, com financeiro, estoque, vendas e PDV, disparo de mensagens por WhatsApp (lembretes, aniversários e promoções), chatbot de WhatsApp e link de agendamento. O produto está finalizado e foi pausado por falta de tração comercial.</p>
-              <div class="links" style="margin-top:20px">
-                <a class="ulink hot" href="https://litso.com.br" target="_blank" rel="noopener">Site</a>
-                <a class="ulink hot" href="https://github.com/ronaldofojrdev/casos/blob/main/casos/litso-erp.md" target="_blank" rel="noopener">Caso e roteiro de implantação</a>
-              </div>
-            </div>
-            <ul>
-              <li>Financeiro, estoque e vendas</li>
-              <li>PDV</li>
-              <li>WhatsApp: lembretes, promoções e chatbot</li>
-              <li>Link de agendamento</li>
-            </ul>
-          </div></div>
-        </div>
-
-        <div class="row" data-r>
-          <button aria-expanded="false" aria-controls="p2">
-            <span class="num">03</span>
-            <span class="ttl">MWPay<small>Desenvolvedor Front-end</small></span>
-            <span class="tags">React</span>
-            <span class="plus"></span>
-          </button>
-          <div class="body" id="p2"><div class="in">
-            <div>
-              <span class="lab">Contexto</span>
-              <p>Banco digital, cliente da Green Code.</p>
-              <span class="lab" style="margin-top:16px">O que eu fiz</span>
-              <p>Desenvolvi o front-end em React (jan a set/2024), em time com back-end e design.</p>
-            </div>
-            <ul><li>React no front-end</li><li>Trabalho em equipe com back-end e design</li></ul>
-            <div class="note">Código privado.</div>
-          </div></div>
-        </div>
-
-        <div class="row" data-r>
-          <button aria-expanded="false" aria-controls="p3">
-            <span class="num">04</span>
-            <span class="ttl">Monitor de canais do Telegram<small>Dados e scraping</small></span>
-            <span class="tags">Scraping / Elastic</span>
-            <span class="plus"></span>
-          </button>
-          <div class="body" id="p3"><div class="in">
-            <div>
-              <span class="lab">Contexto</span>
-              <p>Cliente do setor político (nome em sigilo) que precisava acompanhar palavras e temas em vários canais do Telegram.</p>
-              <span class="lab" style="margin-top:16px">O que eu fiz</span>
-              <p>Scraper em Python de vários canais e grupos do Telegram, com carga no Elasticsearch, dashboard personalizado e nuvem de palavras, num volume grande de dados.</p>
-            </div>
-            <ul><li>Web scraping em Python</li><li>Indexação no Elasticsearch</li><li>Dashboard e nuvem de palavras</li></ul>
-            <div class="note">Cliente e código sob sigilo.</div>
-          </div></div>
-        </div>
-
-        <div class="row" data-r>
-          <button aria-expanded="false" aria-controls="p4">
-            <span class="num">05</span>
-            <span class="ttl">Prospecção comercial com IA<small>Automação</small></span>
-            <span class="tags">Python / IA</span>
-            <span class="plus"></span>
-          </button>
-          <div class="body" id="p4"><div class="in">
-            <div>
-              <span class="lab">O que eu fiz</span>
-              <p>Sistema que descobre leads, calcula um score, gera mensagens personalizadas com IA e envia tudo para aprovação humana em um painel web, automatizando o processo de outbound sem perder o controle de qualidade.</p>
-            </div>
-            <ul><li>Descoberta e pontuação de leads</li><li>Geração de texto com IA</li><li>Aprovação humana no painel</li></ul>
-            <div class="note">Código privado.</div>
-          </div></div>
-        </div>
-
-        <div class="row" data-r>
-          <button aria-expanded="false" aria-controls="p5">
-            <span class="num">06</span>
-            <span class="ttl">Bot de propostas com IA local<small>Automação</small></span>
-            <span class="tags">Python / Ollama</span>
-            <span class="plus"></span>
-          </button>
-          <div class="body" id="p5"><div class="in">
-            <div>
-              <span class="lab">O que eu fiz</span>
-              <p>Automação em Python com modelo de IA rodando localmente (Ollama), agendada pelo Windows, com regras de validação no código para controlar os erros do modelo antes de qualquer envio.</p>
-            </div>
-            <ul><li>Modelo local com Ollama</li><li>Execução agendada</li><li>Travas de validação</li></ul>
-            <div class="note">Código privado.</div>
-          </div></div>
-        </div>
-
-        <div class="row" data-r>
-          <button aria-expanded="false" aria-controls="p6">
-            <span class="num">07</span>
-            <span class="ttl">Atendimento via WhatsApp<small>Automação para clínicas</small></span>
-            <span class="tags">WhatsApp / APIs</span>
-            <span class="plus"></span>
-          </button>
-          <div class="body" id="p6"><div class="in">
-            <div>
-              <span class="lab">O que eu fiz</span>
-              <p>Fluxo de atendimento automatizado pelo WhatsApp, com integração de faturamento, para reduzir o trabalho manual da recepção de clínicas.</p>
-            </div>
-            <ul><li>Atendimento automatizado</li><li>Integração de faturamento</li></ul>
-            <div class="note">Código privado.</div>
-          </div></div>
-        </div>
-
-        <div class="row" data-r>
-          <button aria-expanded="false" aria-controls="p7">
-            <span class="num">08</span>
-            <span class="ttl">Africa Creative<small>Automação de planilhas e Power BI</small></span>
-            <span class="tags">Planilhas / Power BI</span>
-            <span class="plus"></span>
-          </button>
-          <div class="body" id="p7"><div class="in">
-            <div>
-              <span class="lab">O que eu fiz</span>
-              <p>Automação de cerca de 16 GB de planilhas, alimentando dashboards em Power BI e eliminando tarefas manuais e repetitivas da rotina do cliente.</p>
-            </div>
-            <ul><li>Cerca de 16 GB de planilhas</li><li>Dashboards em Power BI</li></ul>
-            <div class="note">Código privado.</div>
-          </div></div>
-        </div>
-
-        <div class="row" data-r>
-          <button aria-expanded="false" aria-controls="p10">
-            <span class="num">09</span>
-            <span class="ttl">ERP e PDV para varejo<small>Caixa, estoque, fiscal e impressão</small></span>
-            <span class="tags">PHP / NFC-e / PDV</span>
-            <span class="plus"></span>
-          </button>
-          <div class="body" id="p10"><div class="in">
-            <div>
-              <span class="lab">Problema</span>
-              <p>Pequenos comércios usam sistemas separados para vender, controlar o caixa e o estoque e emitir o documento fiscal, e o fechamento do dia não bate.</p>
-              <span class="lab" style="margin-top:16px">O que eu fiz</span>
-              <p>Escrevi quase todo o sistema: requisitos, modelagem, back-end, interface do PDV e integrações. PDV com atalhos de teclado, caixa por sessão (abertura, sangria, suprimento e fechamento), estoque e compras, financeiro e comissões, geração de XML, QR Code e DANFE da NFC-e do RJ com NFePHP e impressão em impressora térmica. Os módulos são ligados por configuração, e documentei um roteiro de implantação do levantamento ao go-live.</p>
-              <div class="links" style="margin-top:20px">
-                <a class="ulink hot" href="https://github.com/ronaldofojrdev/casos/blob/main/casos/erp-pdv-varejo.md" target="_blank" rel="noopener">Caso e roteiro de implantação</a>
-              </div>
-            </div>
-            <ul>
-              <li>PDV e caixa por sessão</li>
-              <li>Estoque, compras e financeiro</li>
-              <li>NFC-e (RJ) e impressão térmica</li>
-              <li>Módulos por feature flag</li>
-            </ul>
-            <div class="note">Código privado.</div>
-          </div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experiencia" style="border-top:1px solid var(--line)">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 data-r>Experiência</h2>
-        <p data-r>Empresa pequena, várias funções: desenvolvimento, produto, pré-vendas e suporte.</p>
-      </div>
-      <div class="path" id="caminho">
-        <span class="fio" id="fio" aria-hidden="true"></span>
-        <div class="step" data-r>
-          <div class="when">Jan/2025 até hoje</div>
-          <h3>Desenvolvedor autônomo, BoraRachar</h3>
-          <ul>
-            <li>Único responsável técnico: suporte, novas funcionalidades e monitoramento de logs na AWS.</li>
-            <li>Produto com mais de 1.000 usuários cadastrados e mais de 30 rachas.</li>
+      <div class="head"><h2>O que eu faço</h2><p>Duas frentes que se completam: colocar o sistema para funcionar no cliente e decidir o que o produto precisa ter.</p></div>
+      <div class="two">
+        <div class="panel">
+          <h3>Implantação</h3>
+          <ul class="clean">
+            <li>Levantamento do processo do cliente e reunião de kick-off</li>
+            <li>Configuração e testes de ponta a ponta do sistema</li>
+            <li>Carga de dados a partir de planilhas</li>
+            <li>Treinamento da equipe e acompanhamento do go-live</li>
+            <li>Documentação do roteiro de implantação</li>
           </ul>
         </div>
-        <div class="step" data-r>
-          <div class="when">Jan/2024 a Out/2026</div>
-          <h3>Estagiário, com atuação como Desenvolvedor Full Stack e Product Owner, Green Code</h3>
-          <ul>
-            <li>Product Owner do BoraRachar (set a dez/2024): requisitos, user stories, roadmap, sprints no Azure DevOps e mediação entre cliente, designer e time.</li>
-            <li>Front-end em React do MWPay, banco digital (jan a set/2024).</li>
-            <li>Litso: ERP para barbearias, do requisito ao teste, como único responsável.</li>
-            <li>Scraper de Telegram com Elasticsearch e automação de 16 GB de planilhas para Power BI.</li>
-            <li>Mais de 100 reuniões com clientes e leads e treino diário de TI para o time comercial.</li>
-            <li>Documentação de licitações de TI.</li>
+        <div class="panel">
+          <h3>Requisitos e produto</h3>
+          <ul class="clean">
+            <li>Requisitos, user stories e backlog</li>
+            <li>Roadmap e planejamento de sprints (Azure DevOps e Jira)</li>
+            <li>Ponte entre cliente, design e desenvolvimento</li>
+            <li>Validação da entrega e análise com SQL e Power BI</li>
+            <li>Experiência real como Product Owner</li>
           </ul>
         </div>
-        <div class="step" data-r>
-          <div class="when">Em andamento, até 2027</div>
-          <h3>Engenharia de Software, Estácio</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="casos">
+    <div class="wrap">
+      <div class="head"><h2>Casos de implantação</h2><p>O código é privado, então documentei cada caso com o problema, o que construí e o roteiro de implantação.</p></div>
+      <div class="cards">
+        <article class="card">
+          <h3>Litso: ERP para barbearias e salões</h3>
+          <p class="sub">Único responsável por requisitos, roadmap, desenvolvimento e testes</p>
+          <p>Agenda, comissões, financeiro, estoque, PDV, caixa, WhatsApp (lembretes, promoções e chatbot) e link de agendamento. Produto finalizado, pausado por falta de tração comercial.</p>
+          <div class="tags"><span class="tag">ERP</span><span class="tag">Multi-cliente</span><span class="tag">TypeScript</span><span class="tag">React</span></div>
+          <a class="go" href="https://github.com/ronaldofojrdev/casos/blob/main/casos/litso-erp.md" target="_blank" rel="noopener">Ler o caso e o roteiro de implantação</a>
+        </article>
+        <article class="card">
+          <h3>ERP e PDV para varejo, com NFC-e (RJ)</h3>
+          <p class="sub">Escrevi quase todo o sistema</p>
+          <p>PDV com atalhos, caixa por sessão, estoque, compras, financeiro, geração de XML, QR Code e DANFE da NFC-e do RJ e impressão em impressora térmica. Módulos ligados por configuração.</p>
+          <div class="tags"><span class="tag">PDV</span><span class="tag">Fiscal</span><span class="tag">PHP</span><span class="tag">MySQL</span></div>
+          <a class="go" href="https://github.com/ronaldofojrdev/casos/blob/main/casos/erp-pdv-varejo.md" target="_blank" rel="noopener">Ler o caso e o roteiro de implantação</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" class="alt">
+    <div class="wrap">
+      <div class="head"><h2>Outros projetos</h2><p>Alguns estão no ar, outros são de clientes e ficam sob sigilo. O código de empresas e clientes é privado e posso apresentá-lo em entrevista quando for permitido.</p></div>
+      <div class="list">
+        <div class="item">
+          <div class="name">BoraRachar<span class="status">No ar</span><small>Product Owner e responsável técnico</small></div>
+          <div class="what">Aplicativo e site para dividir custos de corridas e despesas em grupo. Fui Product Owner (set a dez/2024): requisitos, user stories, roadmap e sprints no Azure DevOps. Desde jan/2025 sou o responsável técnico, com infraestrutura na AWS (EC2, backup e monitoramento de logs). Mais de 1.000 usuários e mais de 30 rachas. <a href="https://borarachar.com.br" target="_blank" rel="noopener">borarachar.com.br</a></div>
+        </div>
+        <div class="item">
+          <div class="name">MWPay<small>Desenvolvedor front-end</small></div>
+          <div class="what">Front-end em React de um banco digital, cliente da Green Code (jan a set/2024), em time com back-end e design.<span class="note">Código privado.</span></div>
+        </div>
+        <div class="item">
+          <div class="name">Monitor de canais do Telegram<small>Dados e scraping</small></div>
+          <div class="what">Scraper em Python de canais e grupos do Telegram, com carga no Elasticsearch, dashboard e nuvem de palavras, para um cliente do setor político.<span class="note">Cliente e código sob sigilo.</span></div>
+        </div>
+        <div class="item">
+          <div class="name">Africa Creative<small>Planilhas e Power BI</small></div>
+          <div class="what">Automação de cerca de 16 GB de planilhas, alimentando dashboards em Power BI e eliminando tarefas manuais da rotina do cliente.<span class="note">Código privado.</span></div>
+        </div>
+        <div class="item">
+          <div class="name">Prospecção comercial com IA<small>Automação</small></div>
+          <div class="what">Sistema que descobre leads, calcula um score, gera mensagens com IA e envia tudo para aprovação humana em um painel web.<span class="note">Código privado.</span></div>
+        </div>
+        <div class="item">
+          <div class="name">Atendimento por WhatsApp<small>Automação para clínicas</small></div>
+          <div class="what">Fluxo de atendimento automatizado, com integração de faturamento, para reduzir o trabalho manual da recepção. <a href="https://github.com/ronaldofojrdev/atendente-whatsapp-clinicas" target="_blank" rel="noopener">Versão de código aberto no GitHub</a></div>
+        </div>
+        <div class="item">
+          <div class="name">Bot de propostas com IA local<small>Automação</small></div>
+          <div class="what">Bot em Python com modelo de IA local (Ollama), agendado, com regras de validação para controlar erros antes de qualquer envio. <a href="https://github.com/ronaldofojrdev/freelas-bot" target="_blank" rel="noopener">Código aberto no GitHub</a></div>
         </div>
       </div>
-      <div class="growth" data-r>
-        <strong>Dev, Product Owner, pré-vendas e suporte na mesma empresa.</strong>
-        <span>Mais responsabilidade a cada etapa, sempre com o cliente na conversa.</span>
+    </div>
+  </section>
+
+  <section id="experiencia">
+    <div class="wrap">
+      <div class="head"><h2>Experiência</h2></div>
+      <div>
+        <div class="job">
+          <div class="when">jan/2025 até hoje</div>
+          <div>
+            <h3>Desenvolvedor autônomo, BoraRachar</h3>
+            <ul>
+              <li>Único responsável técnico pelo produto: suporte, novas funcionalidades e monitoramento de logs.</li>
+              <li>Infraestrutura na AWS (EC2 e backup automático) e troca do provedor de geolocalização para o Amazon Location.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="job">
+          <div class="when">jan/2024 a out/2026</div>
+          <div>
+            <h3>Green Code, empresa de software</h3>
+            <p class="muted">Estagiário, com atuação como Desenvolvedor Full Stack e Product Owner</p>
+            <ul>
+              <li>Product Owner do BoraRachar (set a dez/2024): requisitos, user stories, roadmap, sprints no Azure DevOps e mediação entre cliente, designer e time.</li>
+              <li>Construí o Litso e um ERP para varejo, cuidando de requisitos, desenvolvimento e testes.</li>
+              <li>Mais de 100 reuniões com clientes e leads e treinamento diário de 1 hora sobre TI para o time comercial.</li>
+              <li>Front-end em React do MWPay, scraper de Telegram com Elasticsearch e automação de planilhas para Power BI.</li>
+              <li>Organização da documentação de licitações de TI.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="stack" style="border-top:1px solid var(--line)">
+  <section id="formacao" class="alt">
     <div class="wrap">
-      <div class="sec-head"><h2 data-r>Stack</h2><p data-r>O que uso no dia a dia.</p></div>
-      <div class="cols">
-        <div data-r><h4>Requisitos e produto</h4><p>Levantamento de requisitos, user stories, backlog, roadmap, Scrum e Kanban</p></div>
-        <div data-r><h4>Gestão</h4><p>Azure DevOps, Jira, Confluence, ClickUp, Trello, Notion, Figma</p></div>
-        <div data-r><h4>Linguagens</h4><p>Java, JavaScript, TypeScript, Python, SQL</p></div>
-        <div data-r><h4>Front-end e back-end</h4><p>React, Node.js, APIs REST</p></div>
-        <div data-r><h4>Dados</h4><p>Elasticsearch, Power BI, Excel, automação de planilhas, web scraping</p></div>
-        <div data-r><h4>Cloud</h4><p>AWS: EC2, backups, monitoramento de logs, Amazon Location</p></div>
-        <div data-r><h4>Ferramentas</h4><p>Git, Docker, Claude e Codex no dia a dia</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="como" style="border-top:1px solid var(--line)">
-    <div class="wrap">
-      <div class="sec-head"><h2 data-r>Como eu trabalho</h2></div>
-      <div class="how">
-        <div data-r><h3>Falo com o negócio</h3><p>Participei de mais de 100 reuniões com clientes e leads, atuei como Product Owner e treinei o time comercial para falar de TI. Traduzo o que o negócio precisa em algo que o time consegue construir.</p></div>
-        <div data-r><h3>Tenho autonomia</h3><p>Em empresa pequena, aprendi a tocar tarefas do início ao fim: requisito, código, publicação e correção em produção.</p></div>
-        <div data-r><h3>Aprendo rápido</h3><p>Fui de front-end a full stack, de dev a Product Owner, e de web a app iOS publicado na App Store.</p></div>
+      <div class="head"><h2>Formação, certificados e ferramentas</h2></div>
+      <div class="skills">
+        <div class="panel">
+          <h3>Formação</h3>
+          <p>Engenharia de Software, Universidade Estácio de Sá (EAD)</p>
+          <p class="muted">Conclusão prevista em 12/2027</p>
+        </div>
+        <div class="panel">
+          <h3>Certificados e cursos</h3>
+          <ul class="clean">
+            <li>EF SET English Certificate, nível C1 Advanced (leitura e escrita)</li>
+            <li>Gestão Financeira (20 h), Omie.Academy</li>
+          </ul>
+          <p class="muted" style="margin-top:8px">Inglês avançado</p>
+        </div>
+        <div class="panel">
+          <h3>Ferramentas</h3>
+          <ul class="clean">
+            <li>Requisitos e gestão: Azure DevOps, Jira, Confluence, ClickUp, Trello, Notion, Figma</li>
+            <li>Dados: SQL, Power BI, Excel, Elasticsearch</li>
+            <li>Desenvolvimento: React, Node.js, TypeScript, Python, Java</li>
+            <li>Infraestrutura: AWS, Docker, Git</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="contato" class="contact">
     <div class="wrap">
-      <span class="mono" data-r style="color:var(--mute);display:block;margin-bottom:18px">Vamos conversar?</span>
-      <a class="big-mail" data-r href="mailto:ronaldofojr1@gmail.com">ronaldofojr1@gmail.com</a>
-      <div class="cta" data-r>
-        <a class="btn main" href="curriculo-implantacao.pdf" download>Currículo: implantação</a>
-        <a class="btn ghost" href="curriculo-produto.pdf" download>Currículo: produto</a>
-        <a class="btn ghost" href="https://wa.me/5521989854317" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/ronaldo-ferreira-dev/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn ghost" href="https://github.com/ronaldofojrdev" target="_blank" rel="noopener">GitHub</a>
+      <div class="head"><h2>Contato</h2><p>Aberto a vagas júnior de implantação e de produto, remoto ou híbrido no RJ.</p></div>
+      <p class="big"><a href="mailto:ronaldofojr1@gmail.com">ronaldofojr1@gmail.com</a></p>
+      <div class="cta">
+        <a class="btn primary" href="https://wa.me/5521989854317" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="https://www.linkedin.com/in/ronaldo-ferreira-dev/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/ronaldofojrdev" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="curriculo-implantacao.pdf" download>Currículo de implantação</a>
+        <a class="btn" href="curriculo-produto.pdf" download>Currículo de produto</a>
       </div>
     </div>
   </section>
+
 </main>
 
-<div class="wrap">
-  <footer class="mono"><span>São Gonçalo, RJ &middot; fuso de Brasília</span><span>Disponível para trabalho remoto ou híbrido no RJ</span></footer>
-</div>
+<footer>
+  <div class="wrap">Ronaldo Ferreira de Oliveira Junior &middot; São Gonçalo, RJ</div>
+</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
-<script>
-(function(){
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var hasAnime = typeof anime !== 'undefined';
-
-  document.querySelectorAll('[data-r]').forEach(function(el){ if(reduce||!hasAnime) el.style.opacity=1; });
-
-  document.querySelectorAll('.row').forEach(function(row){
-    var btn = row.querySelector('button'), body = row.querySelector('.body');
-    btn.addEventListener('click', function(){
-      var open = row.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open);
-      var target = open ? body.firstElementChild.scrollHeight : 0;
-      if(hasAnime && !reduce){
-        anime({targets: body, height: target, duration: 520, easing: 'easeOutQuart'});
-        if(open){
-          anime({targets: body.querySelectorAll('li, p, .lab, .note, .links'), translateY:[14,0], opacity:[0,1],
-                 delay: anime.stagger(45,{start:120}), duration: 560, easing: 'easeOutCubic'});
-        }
-      } else { body.style.height = target + 'px'; }
-    });
-  });
-
-  if(reduce || !hasAnime) return;
-
-  document.querySelectorAll('#nome .line').forEach(function(line){
-    var walk = function(node){
-      Array.prototype.slice.call(node.childNodes).forEach(function(n){
-        if(n.nodeType===3){
-          var frag = document.createDocumentFragment();
-          n.textContent.split('').forEach(function(c){
-            var s = document.createElement('span'); s.className='ch'; s.textContent = c===' '?' ':c; frag.appendChild(s);
-          });
-          n.parentNode.replaceChild(frag,n);
-        } else if(n.nodeType===1){ walk(n); }
-      });
-    };
-    walk(line);
-  });
-
-  anime.timeline({easing:'easeOutExpo'})
-    .add({targets:'#nome .ch', translateY:['110%',0], rotate:[8,0], opacity:[0,1], duration:1100, delay:anime.stagger(30)})
-    .add({targets:'#sublinhado', strokeDashoffset:[anime.setDashoffset,0], duration:1000, easing:'easeInOutSine'}, '-=500')
-    .add({targets:'.hero [data-r]', translateY:[16,0], opacity:[0,1], duration:750, delay:anime.stagger(110)}, '-=700');
-
-  var seen = new WeakSet();
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(!e.isIntersecting || seen.has(e.target)) return;
-      seen.add(e.target);
-      anime({targets:e.target, opacity:[0,1], translateY:[24,0], duration:850, easing:'easeOutCubic'});
-      io.unobserve(e.target);
-    });
-  },{threshold:.1});
-  document.querySelectorAll('[data-r]').forEach(function(el){ if(!el.closest('.hero')) io.observe(el); });
-
-  var fio = document.getElementById('fio');
-  if(fio){
-    fio.style.transform = 'scaleY(0)';
-    var drew = false;
-    new IntersectionObserver(function(es){
-      if(es[0].isIntersecting && !drew){ drew = true; anime({targets:'#fio', scaleY:[0,1], duration:1600, easing:'easeInOutQuad'}); }
-    },{threshold:.15}).observe(document.getElementById('caminho'));
-  }
-})();
-</script>
 </body>
 </html>
