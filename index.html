@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ronaldo Ferreira | Implantação de Sistemas e Produto | Requisitos, ERP e Product Owner</title>
-<meta name="description" content="Profissional de TI com mais de 2 anos em empresa de software: implantação de sistemas e ERP, levantamento de requisitos e produto (Product Owner). Dois ERPs construídos, mais de 100 reuniões com clientes e treinamento de equipes. Disponível para vagas júnior, remotas, híbridas ou presenciais no RJ e região.">
+<meta name="description" content="Profissional de TI com mais de 2 anos em empresa de software: implantação de sistemas e ERP, levantamento de requisitos e produto (Product Owner). Dois ERPs desenvolvidos na Green Code, mais de 100 reuniões com clientes e treinamento de equipes. Disponível para vagas júnior, remotas, híbridas ou presenciais no RJ e região.">
 <meta property="og:title" content="Ronaldo Ferreira | Implantação de Sistemas e Produto">
 <meta property="og:description" content="Requisitos, produto e implantação. Do cliente ao go-live. Disponível para trabalho remoto, híbrido ou presencial no RJ.">
 <meta property="og:type" content="website">
@@ -103,6 +103,26 @@ dd{margin:0}
 }
 @media (prefers-reduced-motion:reduce){.steppanel{animation:none}}
 
+/* print do produto */
+.shot{margin:14px 0 14px}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px}
+.shot figcaption{font:.82rem var(--sans);color:var(--mute);margin-top:6px}
+
+/* diagrama: quem faz o que em cada etapa */
+.flow{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:10px;counter-reset:s}
+.flow li{position:relative;padding-top:36px;font:.8rem/1.4 var(--sans);counter-increment:s}
+.flow li::before{content:counter(s);position:absolute;top:0;left:0;width:26px;height:26px;border-radius:50%;background:var(--link);color:var(--bg);font-weight:600;display:grid;place-items:center}
+.flow li::after{content:"";position:absolute;top:12px;left:32px;right:-10px;height:2px;background:var(--line)}
+.flow li:last-child::after{display:none}
+.flow b{display:block;font-size:.84rem;color:var(--ink);margin-bottom:6px}
+.flow span{display:block;margin-bottom:5px;color:var(--ink)}
+.flow span i{display:block;font-style:normal;font-weight:600;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;color:var(--mute)}
+@media (max-width:720px){
+  .flow{grid-template-columns:1fr;gap:18px}
+  .flow li{padding:0 0 0 42px;min-height:30px}
+  .flow li::after{top:30px;bottom:-16px;left:12px;right:auto;width:2px;height:auto}
+}
+
 .icon{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.12em;margin-right:6px}
 .contact a{font:1rem var(--sans)}
 .contact .email{font-size:1.5rem;font-family:var(--serif)}
@@ -137,7 +157,7 @@ footer{margin-top:64px;font:.85rem var(--sans);color:var(--mute)}
     <p class="sub">Analista de implantação e de produto &middot; São Gonçalo, RJ</p>
   </header>
 
-  <p class="lede">Trabalho com software há pouco mais de dois anos, numa empresa pequena, onde passei por front-end, full stack, produto e pré-vendas. Fui Product Owner do BoraRachar, construí dois ERPs do zero e participei de mais de 100 reuniões com clientes. Também dei treinamento diário de TI para o time comercial.</p>
+  <p class="lede">Trabalho com software há pouco mais de dois anos, numa empresa pequena, onde passei por front-end, full stack, produto e pré-vendas. Fui Product Owner do BoraRachar, desenvolvi dois ERPs na Green Code e participei de mais de 100 reuniões com clientes. Também dei treinamento diário de TI para o time comercial.</p>
   <p>Agora procuro minha primeira vaga formal como analista de implantação ou de produto. Gosto de entender como o cliente trabalha de verdade, deixar o sistema funcionando para ele e, com o tempo, chegar a Product Owner.</p>
 
   <dl>
@@ -156,17 +176,32 @@ footer{margin-top:64px;font:.85rem var(--sans);color:var(--mute)}
     <div class="stepnav"><button type="button" id="prev">Etapa anterior</button><button type="button" id="next">Próxima etapa</button></div>
   </div>
 
+  <p class="muted" style="margin-top:34px">Quem faz o quê em cada etapa:</p>
+  <ol class="flow" aria-label="Quem faz o quê em cada etapa da implantação">
+    <li><b>Levantamento</b><span><i>Cliente</i>Explica como trabalha</span><span><i>Eu</i>Fecho escopo e prazo</span></li>
+    <li><b>Configuração</b><span><i>Cliente</i>Aprova as regras</span><span><i>Eu</i>Configuro o ambiente</span></li>
+    <li><b>Carga de dados</b><span><i>Cliente</i>Envia as planilhas</span><span><i>Eu</i>Importo e confiro</span></li>
+    <li><b>Testes</b><span><i>Cliente</i>Valida os fluxos</span><span><i>Eu</i>Conduzo o checklist</span></li>
+    <li><b>Treinamento</b><span><i>Cliente</i>Equipe participa</span><span><i>Eu</i>Treino por perfil</span></li>
+    <li><b>Go-live</b><span><i>Cliente</i>Passa a usar</span><span><i>Eu</i>Acompanho o 1º dia</span></li>
+    <li><b>Acompanhamento</b><span><i>Cliente</i>Pede ajustes</span><span><i>Eu</i>Levo ao produto</span></li>
+  </ol>
+
   <h2 id="casos">Casos de implantação</h2>
   <p class="muted">O código é privado, então escrevi cada caso com o problema, o que construí e o roteiro que eu seguiria para implantar.</p>
 
   <div class="entry">
     <h3>Litso, ERP para barbearias e salões</h3>
-    <p>Fui o único responsável por requisitos, roadmap, desenvolvimento e testes. Agenda, comissões, financeiro, estoque, PDV, caixa, WhatsApp e link de agendamento. Está finalizado e foi pausado por falta de tração comercial.</p>
+    <p>Na Green Code, fui o único responsável por requisitos, roadmap, desenvolvimento e testes. Agenda, comissões, financeiro, estoque, PDV, caixa, WhatsApp e link de agendamento. Está finalizado e foi pausado por falta de tração comercial.</p>
+    <figure class="shot">
+      <img src="litso-painel.png" width="1592" height="893" loading="lazy" alt="Painel inicial do Litso mostrando agendamentos do dia, faturamento do período, ticket médio, total de clientes e a lista dos próximos atendimentos.">
+      <figcaption>Painel inicial do Litso (dados de demonstração).</figcaption>
+    </figure>
     <a class="go" href="https://github.com/ronaldofojrdev/casos/blob/main/casos/litso-erp.md" target="_blank" rel="noopener">Ler o caso e o roteiro de implantação</a>
   </div>
   <div class="entry">
     <h3>ERP e PDV para varejo, com NFC-e do RJ</h3>
-    <p>Escrevi quase todo o sistema: PDV com atalhos, caixa por sessão, estoque, compras, financeiro, geração de XML, QR Code e DANFE da NFC-e e impressão térmica. Os módulos são ligados por configuração.</p>
+    <p>Na Green Code, escrevi quase todo o sistema: PDV com atalhos, caixa por sessão, estoque, compras, financeiro, geração de XML, QR Code e DANFE da NFC-e e impressão térmica. Os módulos são ligados por configuração.</p>
     <a class="go" href="https://github.com/ronaldofojrdev/casos/blob/main/casos/erp-pdv-varejo.md" target="_blank" rel="noopener">Ler o caso e o roteiro de implantação</a>
   </div>
 
@@ -198,7 +233,7 @@ footer{margin-top:64px;font:.85rem var(--sans);color:var(--mute)}
         <p class="muted">Estagiário, com atuação como desenvolvedor full stack e Product Owner</p>
         <ul>
           <li>Product Owner do BoraRachar: requisitos, user stories, roadmap, sprints no Azure DevOps e mediação entre cliente, designer e time.</li>
-          <li>Construí o Litso e o ERP de varejo, do requisito ao teste.</li>
+          <li>Desenvolvi o Litso e o ERP de varejo, do requisito ao teste.</li>
           <li>Mais de 100 reuniões com clientes e leads e treinamento diário de 1 hora de TI para o time comercial.</li>
           <li>Front-end do MWPay, scraper de Telegram com Elasticsearch e automação de planilhas para Power BI.</li>
           <li>Organização da documentação de licitações de TI.</li>
